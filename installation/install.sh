@@ -6,5 +6,7 @@ sudo yum groups mark install "Development Tools"
 sudo yum groups mark convert "Development Tools"
 sudo yum -y groupinstall "Development Tools"
 sudo yum -y install libattr-devel
-
-
+sudo yum -y install libacl*
+sudo yum -y install userspace-rcu-devel
+sudo yum -y remove libtirpc-devel
+sudo yum -y install libuuid-devel
