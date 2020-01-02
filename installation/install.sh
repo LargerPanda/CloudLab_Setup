@@ -10,3 +10,4 @@ sudo yum -y install libacl*
 sudo yum -y install userspace-rcu-devel
 sudo yum -y remove libtirpc-devel
 sudo yum -y install libuuid-devel
+sudo yum -y install libxml2-devel
