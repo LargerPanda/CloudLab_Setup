@@ -9,5 +9,8 @@
 #mkdir /data/glusterfs/volume1/brick1/gv1
 #sudo /usr/local/sbin/gluster volume stop gv1
 #sudo /usr/local/sbin/gluster volume delete gv1
-sudo /usr/local/sbin/gluster volume create gv1 ${HOSTNAME:0:6}:/data/glusterfs/volume1/brick1/gv1
+IFS="."
+arr=($HOSTNAME)
+
+sudo /usr/local/sbin/gluster volume create gv1 ${arr[0]}:/data/glusterfs/volume1/brick1/gv1
 sudo /usr/local/sbin/gluster volume start gv1
