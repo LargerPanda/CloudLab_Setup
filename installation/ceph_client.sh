@@ -25,7 +25,7 @@ sudo chown ceph:ceph -R /var/lib/ceph/osd/ceph-$i
 sudo ceph auth add osd.$i osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-$i/keyring
 
 ceph osd crush add  osd.$i  1.086 host=node-$i
-ceph osd crush move node-6 root=default
+ceph osd crush move node-$i root=default
 
 /users/yushua/env/ceph/bin/ceph-osd -f --cluster ceph --id $i --setuser ceph --setgroup ceph
 
