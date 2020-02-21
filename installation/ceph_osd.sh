@@ -1,6 +1,7 @@
 #!/bin/bash
 sudo chmod +r /etc/ceph/ceph.client.admin.keyring
 
+
 IFS="."
 arr=($HOSTNAME)
 temp=${arr[0]}
@@ -11,6 +12,10 @@ echo $nodeid
 
 osdid=`ceph osd create`
 echo $osdid 
+
+
+mkdir /users/yushua/env
+sudo mount -t nfs node-0:/users/yushua/env /users/yushua/env
 
 uuid1=`uuidgen`
 uuid2=`uuidgen`
@@ -31,7 +36,7 @@ sudo ceph auth add osd.$osdid osd 'allow *' mon 'allow profile osd' -i /var/lib/
 ceph osd crush add  osd.$osdid  1.086 host=node-$nodeid
 ceph osd crush move node-$nodeid root=default
 
-sudo nohup /users/yushua/env/ceph/bin/ceph-osd -f --cluster ceph --id $osdid --setuser ceph --setgroup ceph &
+nohup sudo /users/yushua/env/ceph/bin/ceph-osd -f --cluster ceph --id $osdid --setuser ceph --setgroup ceph &
 
 
 
