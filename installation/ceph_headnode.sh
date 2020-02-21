@@ -13,6 +13,5 @@ cd /users/yushua/env/ceph-src
 ./autogen.sh
 ./configure --prefix=/users/yushua/env/ceph
 make -j16
-make install
 sudo make install
 
