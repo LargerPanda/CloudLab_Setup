@@ -15,7 +15,7 @@ echo $osdid
 
 
 mkdir /users/yushua/env
-sudo mount -t nfs node-0:/users/yushua/env /users/yushua/env
+sudo mount -t nfs node-8:/users/yushua/env /users/yushua/env
 
 uuid1=`uuidgen`
 uuid2=`uuidgen`
