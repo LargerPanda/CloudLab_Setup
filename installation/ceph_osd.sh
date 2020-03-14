@@ -36,7 +36,6 @@ sudo ceph auth add osd.$osdid osd 'allow *' mon 'allow profile osd' -i /var/lib/
 ceph osd crush add  osd.$osdid  1.086 host=node-$nodeid
 ceph osd crush move node-$nodeid root=default
 
-nohup sudo /users/yushua/env/ceph/bin/ceph-osd -f --cluster ceph --id $osdid --setuser ceph --setgroup ceph &
 
 
 
