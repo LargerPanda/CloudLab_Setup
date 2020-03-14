@@ -23,8 +23,8 @@ uuid2=`uuidgen`
 sudo /sbin/sgdisk --new=2:0:+5120M --change-name=2:'ceph journal' --partition-guid=2:$uuid1 --typecode=2:45b0969e-9b03-4f30-b4c6-b4b80ceff106 --mbrtogpt -- /dev/sdb
 sudo /sbin/sgdisk --new=1:0:+500G --change-name=1:'ceph data' --partition-guid=1:$uuid2 --typecode=1:89c57f98-2fe5-4dc0-89c1-f3ad0ceff2be --mbrtogpt -- /dev/sdb
 
-sudo mkfs.xfs /dev/sdb1
-sudo mkfs.xfs /dev/sdb2
+sudo mkfs.xfs /dev/sdb1 -f
+sudo mkfs.xfs /dev/sdb2 -f
 
 sudo mkdir /var/lib/ceph/osd/ceph-$osdid
 sudo mount /dev/sdb1 /var/lib/ceph/osd/ceph-$osdid
