@@ -17,6 +17,9 @@ echo $osdid
 mkdir /users/yushua/env
 sudo mount -t nfs node-8:/users/yushua/env /users/yushua/env
 
+cd /users/yushua/env/hiredis/
+sudo make install
+
 uuid1=`uuidgen`
 uuid2=`uuidgen`
 
