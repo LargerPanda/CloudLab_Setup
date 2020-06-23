@@ -6,7 +6,7 @@ sudo chown -R yushua /usr/local/
 #sudo mount -t nfs node-8:/users/yushua/env /users/yushua/env
 
 
-cd /users/yushua/env/luminous/;./install_deps.sh
+cd /users/yushua/env/luminous/;./install-deps.sh
 cd /users/yushua/env/luminous/build; make install
 
 echo "replace launch position"
