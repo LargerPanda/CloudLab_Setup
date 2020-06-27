@@ -2,8 +2,8 @@
 sudo chmod +r /etc/ceph/ceph.client.admin.keyring
 sudo chown -R yushua /usr/local/
 
-#mkdir /users/yushua/env
-#sudo mount -t nfs node-8:/users/yushua/env /users/yushua/env
+mkdir /users/yushua/env
+sudo mount -t nfs node-8:/users/yushua/env /users/yushua/env
 
 
 cd /users/yushua/env/luminous/;./install-deps.sh
